@@ -8,8 +8,6 @@ env:
   GKE_ZONE: us-central1-c
   DEPLOYMENT_NAME: github-actions-customer-deployment
   IMAGE: github-actions-customer-image
-  TAG: 1.0.0
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +28,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/ctse-customer:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/ctse-customer:${{ github.sha }}
 
     - id: "auth"
         name: "Authenticate to Google Cloud"
