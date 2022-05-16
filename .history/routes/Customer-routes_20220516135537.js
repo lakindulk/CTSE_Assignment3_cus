@@ -67,9 +67,7 @@ router.route("/:id").get(async (req, res) => {
     const user = await Customer.findById(userId)
     .then((customer) => {
         res.status(200).send({status: "Single Customer details fetched", customer})
-    })
-    .then ((req,res)=>{res.send( customer)})
-    .catch(() => {
+    }).catch(() => {
         console.log(err.messege);
         res.status(500).send({status: "Error with get user",error: err.messege});
     })
