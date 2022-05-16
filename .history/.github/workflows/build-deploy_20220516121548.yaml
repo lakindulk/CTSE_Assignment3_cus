@@ -45,7 +45,7 @@ jobs:
        push: true
        tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:latest
 
-   deploy:
+  deploy:
      needs: setup-build-publish
      name: deploy to GCP
      runs-on: ubuntu-latest
