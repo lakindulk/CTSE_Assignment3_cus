@@ -16,8 +16,7 @@ env:
 #  DEPLOYMENT_NAME: github-actions-customer-deployment
 #  IMAGE: github-actions-customer-image
 jobs:
-setup-build-publish:
-    name: Setup Build Publish Deploy
+  build:
     runs-on: ubuntu-latest
     steps:
     - run: echo "Build Started"
